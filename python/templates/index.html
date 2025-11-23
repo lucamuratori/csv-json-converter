@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block head %}
+        <!-- Required meta tags -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        {% block styles %}
+            <!--Bootstrap CSS-->
+            {{ bootstrap.load_css()}}
+        {% endblock %}
+
+        <title>JSON to CSV Converter</title>
+        {% endblock %}
+    </head>
+    <body>
+        <h1>Welcome to the file Converter!</h1>
+        {% from 'bootstrap5/form.html' import render_form, render_field %}
+        {{ render_form(form, form_type=horizontal) }} 
+        {{ form.csrf_token }}
+    </body>
+</html>
